@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<!--                                                               -->
+		<!-- Consider inlining CSS to reduce the number of requested files -->
+		<!--                                                               -->
+		<link type="text/css" rel="stylesheet" href="MESApplication.css">
+	
+		<!--                                           -->
+		<!-- Any title is fine                         -->
+		<!--                                           -->
+		<title>Wrapper HTML for Application</title>
+
+		<!--                                           -->
+		<!-- This script loads your compiled module.   -->
+		<!-- If you add any GWT meta tags, they must   -->
+		<!-- be added before this line.                -->
+		<!--                                           -->
+		<script> var isomorphicDir = "com.cimpoint.mes.MESApplication/sc/"; </script>
+		<script language="javascript" src="com.cimpoint.mes.MESApplication/com.cimpoint.mes.MESApplication.nocache.js"></script>
+		
+		<!--[if gte IE 9]>
+		  <style type="text/css">
+		    .gradient {
+		       filter: none;
+		    }
+		  </style>
+		<![endif]-->
+	</head>
+
+	<!--                                           -->
+	<!-- The body can have arbitrary html, or      -->
+	<!-- we leave the body empty because we want   -->
+	<!-- to create a completely dynamic ui         -->
+	<!--                                           -->
+	<body>
+		<!--add loading indicator while the app is being loaded-->
+		<!-- <div id="loadingWrapper">
+			<div id="loading">
+				<div class="loadingIndicator">
+				    <img src="images/waiting-icons/waittrans.gif" width="24" height="24" style="margin-right:8px;float:left;vertical-align:top;"/>CIMTrack<br/>
+				    <span id="loadingMsg">Loading CIMTrack...</span>
+				</div>
+			</div>
+	 	</div>
+		-->
+		
+		<!--load skin-->
+		<script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading skin...';</script>
+		
+		<script type="text/javascript">document.getElementById('loadingMsg').innerHTML = 'Loading Application<br>Please wait...';</script>
+		<!--include the application JS-->
+		
+		<!-- OPTIONAL: include this if you want history support -->
+		<iframe id="__gwt_historyFrame" style="width:0;height:0;border:0"></iframe>
+
+	</body>
+</html>

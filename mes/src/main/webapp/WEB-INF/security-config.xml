@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ ************************************************************************************
+ * Copyright (c) 2011 CIMPoint.  All rights reserved. 
+ * This source is subjected to CIMPoint license as described in the License.txt file.
+ * 
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
+ * EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES 
+ * OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+ * 
+ * Contributors:
+ *     pitor - initial implementation
+ ************************************************************************************
+ -->
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+                           
+                                                      
+	<!-- <bean id="authListener" class="com.cimpoint.mes.server.services.ApplicationListenerImpl" /> -->
+
+	<!-- HTTP security configurations -->
+	<security:http auto-config='true'>
+		<!-- <security:intercept-url pattern="/mes/**" access="ROLE_USER" />
+		<security:intercept-url pattern="/**/*.html" access="ROLE_USER" />
+		<security:intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" /> -->
+			
+	    <security:intercept-url pattern="/main.css" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	    <security:intercept-url pattern="/img/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<security:intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<security:intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY" />
+		
+		<security:logout logout-success-url="/login.html" />
+		<security:form-login login-page="/login.html" default-target-url="/" always-use-default-target="true" />
+		<security:session-management invalid-session-url="/login.html" session-authentication-error-url="/login.html" session-fixation-protection="newSession">
+			<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="false" />
+		</security:session-management>
+	</security:http>
+	
+	<bean id="authenticationProvider"
+		class="com.cimpoint.mes.server.services.AuthenticationProviderImpl" />
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			ref="authenticationProvider" />
+	</security:authentication-manager>
+	    
+</beans>

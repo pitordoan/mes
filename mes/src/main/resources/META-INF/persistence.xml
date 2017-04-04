@@ -1,0 +1,86 @@
+<!-- 
+ ************************************************************************************
+ * Copyright (c) 2011 CIMPoint.  All rights reserved. 
+ * This source is subjected to CIMPoint license as described in the License.txt file.
+ * 
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
+ * EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES 
+ * OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+ * 
+ * Contributors:
+ *     pitor - initial implementation
+ ************************************************************************************
+ -->
+ 
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	
+	<persistence-unit name="CIMPoint-MES-PU" transaction-type="RESOURCE_LOCAL">
+		<!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> -->
+
+		<class>com.cimpoint.common.entities.EAccessPlan</class>
+		<class>com.cimpoint.common.entities.EAccessSchedule</class>			
+		<class>com.cimpoint.common.entities.ETrxAttributes</class>
+		<class>com.cimpoint.common.entities.EUser</class>
+		<class>com.cimpoint.common.entities.EUserGroup</class>	
+		
+		<class>com.cimpoint.mes.common.entities.EArea</class>
+		<class>com.cimpoint.mes.common.entities.EAttribute</class>		
+		<class>com.cimpoint.mes.common.entities.EBatch</class>
+		<class>com.cimpoint.mes.common.entities.EBom</class>	
+		<class>com.cimpoint.mes.common.entities.ECheckList</class>	
+		<class>com.cimpoint.mes.common.entities.EComponent</class>
+		<class>com.cimpoint.mes.common.entities.EConsumption</class>
+		<class>com.cimpoint.mes.common.entities.EContainer</class>
+		<class>com.cimpoint.mes.common.entities.EDataSet</class>
+		<class>com.cimpoint.mes.common.entities.EDictionary</class>
+		<class>com.cimpoint.mes.common.entities.EEquipment</class>
+		<class>com.cimpoint.mes.common.entities.ELocalizedString</class>		
+		<class>com.cimpoint.mes.common.entities.ELot</class>
+		<class>com.cimpoint.mes.common.entities.EOperation</class>		
+		<class>com.cimpoint.mes.common.entities.EPart</class>
+		<class>com.cimpoint.mes.common.entities.EProductionLine</class>
+		<class>com.cimpoint.mes.common.entities.ERecipe</class>
+		<class>com.cimpoint.mes.common.entities.ERouting</class>
+		<class>com.cimpoint.mes.common.entities.ESite</class>		
+		<class>com.cimpoint.mes.common.entities.EStep</class>
+		<class>com.cimpoint.mes.common.entities.EStepStatus</class>
+		<class>com.cimpoint.mes.common.entities.ECheckList</class>
+		<class>com.cimpoint.mes.common.entities.ETransition</class>		
+		<class>com.cimpoint.mes.common.entities.ETransitionAttributes</class>	
+		<class>com.cimpoint.mes.common.entities.ETraveler</class>		
+		<class>com.cimpoint.mes.common.entities.EUnit</class>
+		<class>com.cimpoint.mes.common.entities.EWorkCenter</class>				
+		<class>com.cimpoint.mes.common.entities.EWorkInstruction</class>
+		<class>com.cimpoint.mes.common.entities.EWorkOrder</class>
+		<class>com.cimpoint.mes.common.entities.EWorkOrderItem</class>
+		<class>com.cimpoint.mes.common.entities.EBomItem</class>
+		<class>com.cimpoint.mes.common.entities.EMfgBom</class>
+		<class>com.cimpoint.mes.common.entities.EMfgBomItem</class>			
+		<class>com.cimpoint.mes.common.entities.EApplication</class>				
+		<class>com.cimpoint.mes.common.entities.EForm</class>
+		<class>com.cimpoint.mes.common.entities.EFormField</class>
+		<class>com.cimpoint.mes.common.entities.EFormFieldProperty</class>
+		<class>com.cimpoint.mes.common.entities.ELayout</class>
+		
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" />
+			<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:mes" />
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="" />
+
+			<property name="hibernate.c3p0.min_size" value="5" />
+			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="300" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="3000" />
+
+		</properties>
+	</persistence-unit>
+	
+</persistence>

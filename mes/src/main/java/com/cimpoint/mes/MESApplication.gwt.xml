@@ -1,0 +1,22 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.user.theme.standard.Standard"/>
+	<inherits name="com.smartgwt.SmartGwt"/>
+	<inherits name="com.smartgwt.Drawing" />
+	<inherits name="com.smartgwt.SmartGwtPluginBridges"/>
+	
+	<inherits name="com.cimpoint.ClientCommon"/>
+	<inherits name="com.cimpoint.ServerCommon"/>
+	<inherits name="com.cimpoint.mes.MESCommon"/>
+		
+	<entry-point class="com.cimpoint.mes.client.MESApplication"/>
+		
+	<source path="client" />
+	<source path="common" />
+	<source path="server" />
+	
+	<!-- remove for production compilation -->
+	<!-- <set-property name="user.agent" value="gecko1_8" /> -->
+	<!-- <set-property name="user.agent" value="ie9" /> -->
+  	<set-property name="locale" value="default" />
+</module>
